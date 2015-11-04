@@ -12,8 +12,18 @@ void setup() {
   //set size of canvas
   size(800, 600);
   //initialize variables
-  int i = 0;
-  while ( i < count) {
+  
+  //int i = 0;
+  //while ( i < count) {
+  //  x[i] = width/2;
+  //  y[i] = height/2;
+  //  diam[i] = 80;
+  //  velX[i] = random(-5, 5);
+  //  velY[i] = random(-5, 5);
+  //  i++;
+  //}
+  
+  for(int i = 0; i < count; i++) {
     x[i] = width/2;
     y[i] = height/2;
     diam[i] = 80;
@@ -21,13 +31,14 @@ void setup() {
     velY[i] = random(-5, 5);
     i++;
   }
+  
+  
 }
 
 void draw() {
   //draw background to cover previous frame
   background(0);
-  int i = 0;
-  while ( i < count) {
+  for (int i = 0; i < count; i++) {
 
 
     //draw ball
@@ -48,6 +59,5 @@ void draw() {
     } else if (y[i] - diam[i]/2 <= 0) {
       velY[i] = abs(velY[i]);
     }
-    i++;
   }
 }
